@@ -7,9 +7,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/main.js',
+  entry: {
+    main: './src/js/main.js',
+    home: './src/js/home.js',
+    'equipo-medico': './src/js/equipo-medico.js',
+    contacto: './src/js/contacto.js',
+  },
   output: {
-    filename: 'main.js',
+    filename: 'assets/js/[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
@@ -21,14 +26,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
+      chunks: ['main', 'home'],
     }),
     new HtmlWebpackPlugin({
       filename: 'contacto.html',
       template: './src/contacto.html',
+      chunks: ['main', 'contacto'],
     }),
     new HtmlWebpackPlugin({
       filename: 'equipo-medico.html',
       template: './src/equipo-medico.html',
+      chunks: ['main', 'equipo-medico'],
     }),
     new CopyPlugin({
       patterns: [{ from: 'src/img', to: 'img' }],

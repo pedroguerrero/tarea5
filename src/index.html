@@ -27,11 +27,49 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control reservar"
+                  id="nombre"
+                  aria-describedby="nombre"
+                  data-message="Por favor, ingresa tu nombre"
+                  data-regex="^.{5,}$"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input
+                  type="text"
+                  class="form-control reservar"
+                  id="telefono"
+                  aria-describedby="telefono"
+                  data-message="Por favor, ingresa tu telefono"
+                  data-regex="^\+569\d{8}$"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="rut" class="form-label">Rut</label>
+                <input
+                  type="text"
+                  class="form-control reservar"
+                  id="rut"
+                  aria-describedby="rut"
+                  data-message="Por favor, ingresa tu rut"
+                  data-regex="^\d+-[\dKk]$"
+                />
+              </div>
+            </form>
+          </div>
+
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-secondary cerrar-agenda"
               data-bs-dismiss="modal"
             >
               Cerrar
@@ -81,7 +119,7 @@
               <li class="nav-item">
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-primary abrir-agenda"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                 >
@@ -162,46 +200,7 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-4 mb-5">
-              <div class="card text-center">
-                <img src="img/service-1.png" class="card-img-top" alt="" />
-                <div class="card-body">
-                  <h3 class="card-title">Consultas</h3>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-5">
-              <div class="card text-center">
-                <img src="img/service-2.png" class="card-img-top" alt="" />
-                <div class="card-body">
-                  <h3 class="card-title">Urgencias</h3>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-5">
-              <div class="card text-center">
-                <img src="img/service-3.png" class="card-img-top" alt="" />
-                <div class="card-body">
-                  <h3 class="card-title">Especialidades</h3>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="row services-row"></div>
         </div>
       </section>
 
@@ -214,7 +213,7 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row patients-row">
             <div class="col-md-4 mb-5">
               <div class="card text-center">
                 <img src="img/patient-1.png" class="card-img-top" alt="" />
